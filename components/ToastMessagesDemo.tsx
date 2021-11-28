@@ -88,7 +88,7 @@ function ToastMessagesDemo() {
             }}
           />
           <Button
-            title="Show a second modal screen & toast message"
+            title="Show Modal2 screen & toast message"
             onPress={() => {
               navigation.navigate('Modal2')
               LevelsToast.show({
