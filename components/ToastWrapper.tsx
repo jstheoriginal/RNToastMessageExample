@@ -164,7 +164,6 @@ export function ToastInstance(props: ToastProps) {
       position="bottom"
       visibilityTime={3500}
       config={toastConfig}
-      bottomOffset={95}
       keyboardOffset={12}
       {...props}
     />

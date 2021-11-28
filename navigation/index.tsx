@@ -13,13 +13,15 @@ import DefaultToast from '../components/ToastWrapper';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import ModalScreen from '../screens/ModalScreen';
+import Modal1Screen from '../screens/Modal1Screen';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import { ToastInstance } from '../components/ToastWrapper';
+import Toast from 'react-native-toast-message';
+import Modal2Screen from '../screens/Modal2Screen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -29,7 +31,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
         theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <RootNavigator />
       </NavigationContainer>
-      <ToastInstance />
+      <ToastInstance setRef={Toast.setRootRef} />
     </>
   );
 }
@@ -46,7 +48,8 @@ function RootNavigator() {
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
-        <Stack.Screen name="Modal" component={ModalScreen} />
+        <Stack.Screen name="Modal1" component={Modal1Screen} />
+        <Stack.Screen name="Modal2" component={Modal2Screen} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -71,30 +74,16 @@ function BottomTabNavigator() {
         name="TabOne"
         component={TabOneScreen}
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate('Modal')}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}>
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
+          title: 'Non-Modal',
+          tabBarIcon: ({ color }) => <TabBarIcon name="chevron-down" color={color} />,
         })}
       />
       <BottomTab.Screen
         name="TabTwo"
         component={TabTwoScreen}
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Modal',
+          tabBarIcon: ({ color }) => <TabBarIcon name="chevron-up" color={color} />,
         }}
       />
     </BottomTab.Navigator>

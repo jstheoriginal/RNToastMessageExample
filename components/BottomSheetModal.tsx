@@ -1,8 +1,8 @@
 import React from 'react'
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, StyleProp, ViewStyle, ColorValue, StyleSheet } from 'react-native';
+import { View, StyleProp, ViewStyle, ColorValue, StyleSheet, Modal, ModalProps } from 'react-native';
 import { ToastInstance } from './ToastWrapper';
-import Modal, {ModalProps} from 'react-native-modal'
+import Toast from 'react-native-toast-message';
 
 type BottomSheetModalProps = Partial<
   Omit<ModalProps, 'useNativeDriver' | 'hideModalContentWhileAnimating' | 'swipeDirection' | 'backdropOpacity'>
@@ -22,60 +22,52 @@ function BottomSheetModal({
   contentContainerStyle,
   children,
   isVisible,
-  backdropColor = 'rgba(0,0,0,0.3)',
   backgroundColor,
   borderRadius = 20,
-  onSwipeComplete,
   ...rest
 }: BottomSheetModalProps) {
-  const padding = defaultPadding ? 16 : 0
-  // if we have an onSwipeComplete callback, we'll assume swipe down is enabled
-  const swipeDownEnabled = Boolean(onSwipeComplete)
-  // to have the modal animate as the swipe happens, native animations don't currently work, so disable them
-  // https://github.com/react-native-modal/react-native-modal/issues/163#issuecomment-409760695
-  const useNativeAnimations = !swipeDownEnabled
 
   return (
     <Modal
-      useNativeDriver={useNativeAnimations}
       // if `useNativeDriver` is true, `hideModalContentWhileAnimating` needs to also be true
       // https://github.com/react-native-modal/react-native-modal/issues/92
-      hideModalContentWhileAnimating={useNativeAnimations}
       // avoids flashing during animations on the backdrop
-      useNativeDriverForBackdrop
       // prevent backdrop flickering on close for iOS devices (sim seems fine)
       // this doesn't affect the animation in any way.
       // https://github.com/react-native-modal/react-native-modal/issues/268
-      backdropTransitionOutTiming={0}
-      isVisible={isVisible}
-      style={[bottomSheetModalStyles.modal, style]}
-      backdropColor={backdropColor}
+      visible={isVisible}
+      style={[style]}
+      transparent
       // set the opacity on the colour itself
-      backdropOpacity={1}
-      animationIn="slideInUp"
-      animationOut="slideOutDown"
-      swipeDirection={swipeDownEnabled ? ['down'] : undefined}
-      onSwipeComplete={onSwipeComplete}
+      animationType="fade"
       {...rest}>
-      <SafeAreaView
-        edges={['bottom']}
-        style={{
-          backgroundColor: 'white',
-          borderTopRightRadius: borderRadius,
-          borderTopLeftRadius: borderRadius,
-        }}>
-        <View style={[{padding}, contentContainerStyle]}>{children}</View>
-        <ToastInstance />
-      </SafeAreaView>
+        <View style={[styles.centeredView, contentContainerStyle]}><View style={styles.modalView}>{children}</View></View>
+        <ToastInstance setRef={Toast.setModalRef} />
     </Modal>
   )
 }
 
-const bottomSheetModalStyles = StyleSheet.create({
-  modal: {
-    justifyContent: 'flex-end',
-    // Modal by default has margin applied to inset
-    margin: 0,
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+    marginTop: 22
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 6
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 12,
+    elevation: 5
   },
 })
 

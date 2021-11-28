@@ -3152,7 +3152,7 @@ expo-asset@~8.4.3:
     path-browserify "^1.0.0"
     url-parse "^1.4.4"
 
-expo-constants@~12.1.1, expo-constants@~12.1.2, expo-constants@~12.1.3:
+expo-constants@~12.1.1, expo-constants@~12.1.3:
   version "12.1.3"
   resolved "https://registry.yarnpkg.com/expo-constants/-/expo-constants-12.1.3.tgz#bec48a42a7760b010450961c209bb4b1158b9cd6"
   integrity sha512-HXlMTPn9pnJdMju3WcwX4oEB7EOECOTzdIPaG3JEluygqzafwKLMR8BE82+64jgAxlGIWZsYl+3Ni9wuTFQeYw==
@@ -3219,7 +3219,7 @@ expo-modules-core@~0.4.4, expo-modules-core@~0.4.7:
     compare-versions "^3.4.0"
     invariant "^2.2.4"
 
-expo-splash-screen@~0.13.3:
+expo-splash-screen@~0.13.5:
   version "0.13.5"
   resolved "https://registry.yarnpkg.com/expo-splash-screen/-/expo-splash-screen-0.13.5.tgz#ece76c092f2ce88e4660a70e532ed47909a01ddd"
   integrity sha512-L/L0XlmmxSoyuooCVvbPBO4xUF9kAs+F0+fML3pf7miBOnTd/v9j5riKSmaDthNtM4AarXxgi0AXzSHQ1M3rZg==
@@ -4201,7 +4201,7 @@ jest-environment-node@^26.6.2:
     jest-mock "^26.6.2"
     jest-util "^26.6.2"
 
-jest-expo@~43.0.0:
+jest-expo@^43.0.0:
   version "43.0.1"
   resolved "https://registry.yarnpkg.com/jest-expo/-/jest-expo-43.0.1.tgz#98cd432e087338f21a73100da3e60130904616f6"
   integrity sha512-wB6Cv7e8NO7cYDIdUMT2fP0NEnY4/Uu6Ern/j8OXTMhwkMFVZl7qf7CesEopNz4MqUweBWyi+zkt0cxwCEaC/A==
@@ -6057,7 +6057,7 @@ react-native-modal@^13.0.0:
     prop-types "^15.6.2"
     react-native-animatable "1.3.3"
 
-react-native-safe-area-context@^3.3.2:
+react-native-safe-area-context@3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.3.2.tgz#9549a2ce580f2374edb05e49d661258d1b8bcaed"
   integrity sha512-yOwiiPJ1rk+/nfK13eafbpW6sKW0jOnsRem2C1LPJjM3tfTof6hlvV5eWHATye3XOpu2cJ7N+HdkUvUDGwFD2Q==
@@ -6069,10 +6069,10 @@ react-native-screens@~3.8.0:
   dependencies:
     warn-once "^0.1.0"
 
-react-native-toast-message@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-toast-message/-/react-native-toast-message-2.0.1.tgz#a3d97194f789d876c4b764323690919d9f56ec0f"
-  integrity sha512-WiZ/SPN3atpVTkXRlfzglC8X4S0ebMowpf4Pc7TwKdYHFCxlUCucm8MXJEIjKJjhueJCfDSkQePYfMIKQYUbrA==
+react-native-toast-message@2.1.0-beta.1:
+  version "2.1.0-beta.1"
+  resolved "https://registry.yarnpkg.com/react-native-toast-message/-/react-native-toast-message-2.1.0-beta.1.tgz#8d31d24a03f0a0f84863a2886d8b71da7f2a16dd"
+  integrity sha512-PpwhUINDRnqFMqbDWLtIGZhx67OPlxXghZEHYlWdh9xbQHLeMGL++6AVLkGPAl+HLcG/AYfrKwwn92/+OyTQnA==
 
 react-native-web@0.17.1:
   version "0.17.1"
@@ -6087,10 +6087,10 @@ react-native-web@0.17.1:
     normalize-css-color "^1.0.2"
     prop-types "^15.6.0"
 
-react-native@0.64.2:
-  version "0.64.2"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.64.2.tgz#233b6ed84ac4749c8bc2a2d6cf63577a1c437d18"
-  integrity sha512-Ty/fFHld9DcYsFZujXYdeVjEhvSeQcwuTGXezyoOkxfiGEGrpL/uwUZvMzwShnU4zbbTKDu2PAm/uwuOittRGA==
+react-native@0.64.3:
+  version "0.64.3"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.64.3.tgz#40db6385963b4b17325f9cc86dd19132394b03fc"
+  integrity sha512-2OEU74U0Ek1/WeBzPbg6XDsCfjF/9fhrNX/5TFgEiBKd5mNc9LOZ/OlMmkb7iues/ZZ/oc51SbEfLRQdcW0fVw==
   dependencies:
     "@jest/create-cache-key-function" "^26.5.0"
     "@react-native-community/cli" "^5.0.1-alpha.1"
