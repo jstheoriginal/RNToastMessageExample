@@ -6,7 +6,7 @@ import LevelsToast, {ToastWrapperShowParams} from './ToastWrapper'
 
 function ToastMessagesDemo() {
   const navigation = useNavigation()
-  const [autoHide, setAutoHide] = React.useState(true)
+  const [autoHide, setAutoHide] = React.useState(false)
   const [position, setPosition] = React.useState<'top' | 'bottom'>('bottom')
   const [bottomModalIsVisible, setBottomModalIsVisible] = React.useState(false)
 
