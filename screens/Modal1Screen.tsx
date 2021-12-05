@@ -16,16 +16,31 @@ type Props = {
 }
 
 export default function Modal1Screen({navigation}: Props) {
+  const [count, setCount] = React.useState(0)
+
   React.useLayoutEffect(() => {
     navigation.setOptions({
       title: 'Demo Inside Modal 1',
       headerRight: () => <MaterialIcons name="close" onPress={navigation.goBack} size={22} />
     })
   })
+
+  React.useEffect(() => {
+    // just trigger a rerender of the screen to make sure it doesn't cause things to break
+    const interval = setInterval(() => {
+      setCount(prevCount => prevCount + 1)
+    }, 1000)
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [])
+
   return (
     <View style={styles.container}>
+      <Text style={{margin: 16}}>{`Elapsed seconds: ${count}`}</Text>
       <ToastMessagesDemo />
-      <ToastInstance setRef={Toast.setModalRef} />
+      <ToastInstance />
     </View>
   );
 }

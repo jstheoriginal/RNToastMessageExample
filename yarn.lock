@@ -6069,10 +6069,10 @@ react-native-screens@~3.8.0:
   dependencies:
     warn-once "^0.1.0"
 
-react-native-toast-message@2.1.0-beta.1:
-  version "2.1.0-beta.1"
-  resolved "https://registry.yarnpkg.com/react-native-toast-message/-/react-native-toast-message-2.1.0-beta.1.tgz#8d31d24a03f0a0f84863a2886d8b71da7f2a16dd"
-  integrity sha512-PpwhUINDRnqFMqbDWLtIGZhx67OPlxXghZEHYlWdh9xbQHLeMGL++6AVLkGPAl+HLcG/AYfrKwwn92/+OyTQnA==
+react-native-toast-message@2.1.0-beta.2:
+  version "2.1.0-beta.2"
+  resolved "https://registry.yarnpkg.com/react-native-toast-message/-/react-native-toast-message-2.1.0-beta.2.tgz#fbbd29bf1f0f81f53a5d4c9e6913eb3b288953ea"
+  integrity sha512-/9PxKLlSj8uqbtcBl23B/z94NODd8i7gysQq8z1xfGLKjWk+pYOwRn+K4VlqzMA2FNfQ+8JYVgo1XDQ6nqysyw==
 
 react-native-web@0.17.1:
   version "0.17.1"

@@ -25,7 +25,7 @@ export default function Modal2Screen({navigation}: Props) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Modal 2</Text>
-      <ToastInstance setRef={Toast.setModalRef} />
+      <ToastInstance />
     </View>
   );
 }

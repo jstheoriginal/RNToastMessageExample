@@ -42,7 +42,7 @@ function BottomSheetModal({
       animationType="fade"
       {...rest}>
         <View style={[styles.centeredView, contentContainerStyle]}><View style={styles.modalView}>{children}</View></View>
-        <ToastInstance setRef={Toast.setModalRef} />
+        <ToastInstance />
     </Modal>
   )
 }

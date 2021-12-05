@@ -31,7 +31,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
         theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <RootNavigator />
       </NavigationContainer>
-      <ToastInstance setRef={Toast.setRootRef} />
+      <ToastInstance />
     </>
   );
 }

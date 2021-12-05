@@ -40,7 +40,7 @@ function ToastComponent({
           <Text
             style={[
               {
-                color: isErrorType ? 'black' : 'white',
+                color:'white',
               },
               text1Style,
             ]}
@@ -52,7 +52,7 @@ function ToastComponent({
               style={[
                 styles.text2,
                 {
-                  color: 'gray',
+                  color: 'rgba(255,255,255,0.68)',
                 },
                 text2Style,
               ]}
@@ -63,7 +63,7 @@ function ToastComponent({
         </View>
         <Pressable onPress={() => Toast.hide()} style={styles.closeButton}>
           <View style={styles.closeButtonContainer}>
-            <MaterialIcons name="close" color={isErrorType ? 'black' : 'white'} size={16} style={styles.closeIcon} />
+            <MaterialIcons name="close" color={'white'} size={16} style={styles.closeIcon} />
           </View>
         </Pressable>
       </View>
